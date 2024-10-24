@@ -1,4 +1,4 @@
-import 'package:events/pages/home/home_page.dart';
+import 'package:events/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,13 +10,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter event app',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      routerDelegate: Routes.config.routerDelegate,
+      routeInformationParser: Routes.config.routeInformationParser,
+      routeInformationProvider: Routes.config.routeInformationProvider,
     );
   }
 }
