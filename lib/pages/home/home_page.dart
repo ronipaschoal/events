@@ -6,9 +6,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const EvScaffold(
-      child: Center(
-        child: Text('Home Page'),
+    return EvScaffold(
+      child: Container(
+        color: Theme.of(context).colorScheme.surface,
+        child: Center(
+          child: Text(
+            'Home Page',
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+        ),
       ),
     );
   }
